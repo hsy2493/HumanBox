@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메인 이미지</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script type="text/javascript">
+window.onload = function() {
+/////////////////////////////상단////////////////////////////
+var option01 = document.getElementById('option01');
+document.getElementById("option01").focus();
+////////////////////////////////////////////////////////////
+/////////////////////////////중단////////////////////////////
+var option1 = document.getElementById('option1');
+var option2 = document.getElementById('option2');
+var option3 = document.getElementById('option3');
+var option4 = document.getElementById('option4');
+var option5 = document.getElementById('option5');
+var option6 = document.getElementById('option6');
+var option7 = document.getElementById('option7');
+var option8 = document.getElementById('option8');
+var option9 = document.getElementById('option9');
+var iframe = document.getElementById('myFrame');
+
+// 페이지 로딩 시에 옵션 1이 선택되고, iframe에 파일1.html 로드
+option1.checked = true;
+option01.checked = true;
+iframe.src = 'nexongame1.html';
+
+// 옵션1이 선택되었을 때 iframe에 파일1.html 로드
+option1.addEventListener('change', function() {
+if (this.checked) {
+    iframe.src = 'nexongame1.html';
+    }
+});
+
+// 옵션2가 선택되었을 때 iframe에 파일2.html 로드
+option2.addEventListener('change', function() {
+if(this.checked) {
+    iframe.src = 'nexongameimg/nexongame1-1.html';
+    }
+});
+
+// 옵션3가 선택되었을 때 iframe에 파일3.html 로드
+option3.addEventListener('change', function() {
+if(this.checked) {
+    iframe.src = 'nexongameimg/nexongame1-2.html';
+    }
+});
+
+
+// 옵션4가 선택되었을 때 iframe에 파일4.html 로드
+option4.addEventListener('change', function() {
+if(this.checked) {
+    iframe.src = 'nexongameimg/nexongame1-3.html';
+    }
+});
+
+
+// 옵션5가 선택되었을 때 iframe에 파일5.html 로드
+option5.addEventListener('change', function() {
+if(this.checked) {
+    iframe.src = 'nexongameimg/nexongame1-4.html';
+    }
+});
+
+
+// 옵션6가 선택되었을 때 iframe에 파일6.html 로드
+option6.addEventListener('change', function() {
+if(this.checked) {
+    iframe.src = 'nexongameimg/nexongame1-5.html';
+    }
+});
+
+
+// 옵션7가 선택되었을 때 iframe에 파일7.html 로드
+option7.addEventListener('change', function() {
+if(this.checked) {
+    iframe.src = 'nexongameimg/nexongame1-6.html';
+    }
+});
+
+
+// 옵션8가 선택되었을 때 iframe에 파일8.html 로드
+option8.addEventListener('change', function() {
+if(this.checked) {
+    iframe.src = 'nexongameimg/nexongame1-7.html';
+    }
+});
+
+
+// 옵션9가 선택되었을 때 iframe에 파일9.html 로드
+option9.addEventListener('change', function() {
+if(this.checked) {
+    iframe.src = 'nexongameimg/nexongame1-8.html';
+    }
+});
+
+// 옵션10가 선택되었을 때 iframe에 파일10.html 로드
+option10.addEventListener('change', function() {
+if(this.checked) {
+    iframe.src = 'nexongameimg/nexongame1-9.html';
+    }
+});
+
+};
+/////////////////////////////////////////////////////////
+//////////////////////////하단///////////////////////////
+function iHeight() {
+    var iHeight = document.getElementById('myFrame').contentWindow.document.body.scrollHeight;
+    document.getElementById('myFrame').height = iHeight;
+}
+
+function loadPage(pageUrl) {
+    // iframe에 페이지를 로드
+    var iframe = document.getElementById('myFrame');
+    iframe.src = pageUrl;
+}
+///////////////////////////////////////////////////////
+
+
+</script>
+<style>
+/*------------------------------상단------------------------------*/
+iframe{border: none;}
+.allgame{
+	 width: 960px;height: 70px;
+    position: relative; left: 110px;
+    font-size: 24px; font-weight: bold;
+}
+b{
+    position: relative;top: 15px;
+    font-size: 30px;
+}
+.icon{
+    display: flex;
+    justify-content: flex-start; /* 컨테이너의 여백 없애기 */
+    width: 200px; /* 원하는 너비로 조절하세요 */
+}
+.radio-icons{
+    position: relative;
+    top: -20px;
+    flex: 1; /* 컨테이너의 공간을 동일하게 분할 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+.radio-icons:first-child{
+    margin-left: 130px; /* 첫 번째 라디오 버튼의 오른쪽 여백 추가 */
+}
+.radio-icons input[type="radio"]{
+    display: none;  /* 기본 라디오 버튼 숨김 */
+}
+.radio-label{
+    cursor: pointer;
+    border: 1px solid gray;
+    color:gray;
+    padding: 5px 10px; /* 패딩 조정 */
+    transition: background-color 0.3s, color 0.3s; /* 호버 효과를 위한 트랜지션 추가 */
+    border-radius: 3px; /* 테두리를 조금 더 부드럽게 만들기 */
+    font-size: 14px; /* 아이콘 크기 조정 */
+}
+.radio-label:hover {
+    color: blue; /* 호버 효과 텍스트 색상 */
+}
+.commu{
+    position: relative;top: -65px;left: 220px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.commu a{
+    text-decoration: none;
+    color: black;
+}
+.commu a:hover{
+    color: rgb(69, 69, 233)
+}
+.search{
+    font-size: 13px;
+    position: relative; left: 440px;bottom: 70px;
+    margin-top: 15px;
+    border: 1px solid darkgray;width: 280px;height: 35px;
+}
+.fa-magnifying-glass{
+    position: relative; bottom: 65px;left: 400px;
+}
+.fa-magnifying-glass:hover{
+    color: rgb(69, 69, 233)
+}
+/*----------------------------------------------------------------*/
+/*------------------------------중단------------------------------*/
+.list{
+    position: relative;left: 110px;
+    width: 960px;height: 90px;
+}
+.game-cate{
+display: flex; /* Flexbox를 사용하여 내부 요소를 가로로 정렬합니다. */
+}
+/* 라디오 버튼 스타일링 */
+.game-cate input[type="radio"]{
+display: none; /* 기본 라디오 버튼 숨김 */
+}
+.game-label{
+margin-right: 20px; margin-top: 15px;/* 라디오 버튼 간의 간격 조절 */
+cursor: pointer;
+}
+/* 라디오 버튼에 따른 스타일링 */
+.game-label span{
+position: relative;left: 30px;top: -5px;
+border: 1px solid darkgray;
+padding: 2px 8px;
+border-radius: 20px;
+transition: border-color 0.3s, color 0.3s; /* 호버 효과를 위한 트랜지션 추가 */
+font-size: 12px;
+color: darkgray;
+}
+/* 체크된 라디오 버튼 스타일링 */
+.game-cate input[type="radio"]:checked + .game-label span {
+background-color: #000;
+color: #fff;
+}
+/* 호버 효과 */
+.game-label:hover span{
+border-color: #69c; /* 테두리 색상 파란색으로 변경 */
+color: #69c; /* 글자색 파란색으로 변경 */
+}
+
+/*----------------------------------------------------------------*/
+/*------------------------------하단------------------------------*/
+.myFrame01{
+    position: relative;
+    left: 70px; top:30px
+}
+/*------------------------------------*/
+</style>
+</head>
+<body>
+<!------------------------------상단------------------------------>
+<div class="allgame">
+<b>전체게임</b>
+<div class="icon">
+
+    <div class="radio-icons">
+      <input type="radio" id="option01" name="OPTION" value="option01" checked>
+      <label for="option01" class="radio-label" tabindex="1" onclick="window.location.href='nexon.html'"><i class="fa-brands fa-microsoft"></i></label>
+    </div>
+    <div class="radio-icons">
+      <input type="radio" id="option02" name="OPTION" value="option02">
+      <label for="option02" class="radio-label" tabindex="2" onclick="window.location.href='nexon2.html'"><i class="fa-solid fa-bars"></i></label>
+    </div>
+    
+  </div>
+
+<span class="commu">
+    <a href="#">
+        <i class="fa-solid fa-comment"></i>
+        모바일게임 커뮤니티 모아보기
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+</span>
+
+<input type="text" placeholder="게임명 검색" class="search">
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+<!--------------------------------------------------------------->
+<!------------------------------중단------------------------------>
+<div class="list">
+
+<div class="game-cate">
+    <input type="radio" id="option1" name="options" value="option1" checked>
+    <label for="option1" class="game-label"><span>#전체</span></label>
+
+    <input type="radio" id="option2" name="options" value="option2">
+    <label for="option2" class="game-label"><span>#얼리스테이지</span></label>
+
+    <input type="radio" id="option3" name="options" value="option3">
+    <label for="option3" class="game-label"><span>#Windows</span></label>
+
+    <input type="radio" id="option4" name="options" value="option4">
+    <label for="option4" class="game-label"><span>#macOS</span></label>
+
+    <input type="radio" id="option5" name="options" value="option5">
+    <label for="option5" class="game-label"><span>#Steam</span></label>
+
+    <input type="radio" id="option6" name="options" value="option6">
+    <label for="option6" class="game-label"><span>#EPIC</span></label>
+
+    <input type="radio" id="option7" name="options" value="option7">
+    <label for="option7" class="game-label"><span>#Android</span></label>
+
+    <input type="radio" id="option8" name="options" value="option8">
+    <label for="option8" class="game-label"><span>#iOS</span></label>
+
+    <input type="radio" id="option9" name="options" value="option9">
+    <label for="option9" class="game-label"><span>#PlayStation</span></label>
+
+    <input type="radio" id="option10" name="options" value="option10">
+    <label for="option10" class="game-label"><span>#XBOX</span></label>
+</div>
+
+<div class="game-cate">
+    <input type="radio" id="option11" name="options" value="option11" checked>
+    <label for="option11" class="game-label"><span>#SWITCH</span></label>
+
+    <input type="radio" id="option12" name="options" value="option12">
+    <label for="option12" class="game-label"><span>#RPG</span></label>
+
+    <input type="radio" id="option13" name="options" value="option13">
+    <label for="option13" class="game-label"><span>#액션 RPG</span></label>
+
+    <input type="radio" id="option14" name="options" value="option14">
+    <label for="option14" class="game-label"><span>#AOS/MOBA</span></label>
+
+    <input type="radio" id="option15" name="options" value="option15">
+    <label for="option15" class="game-label"><span>#FPS</span></label>
+
+    <input type="radio" id="option16" name="options" value="option16">
+    <label for="option16" class="game-label"><span>#캐주얼</span></label>
+
+    <input type="radio" id="option17" name="options" value="option17">
+    <label for="option17" class="game-label"><span>#스포츠</span></label>
+
+    <input type="radio" id="option18" name="options" value="option18">
+    <label for="option18" class="game-label"><span>#PVP</span></label>
+
+    <input type="radio" id="option19" name="options" value="option19">
+    <label for="option19" class="game-label"><span>#전략</span></label>
+
+    <input type="radio" id="option20" name="options" value="option20">
+    <label for="option20" class="game-label"><span>#이벤트</span></label>
+</div>
+
+</div>
+<!--------------------------------------------------------------->
+<iframe src="nexongame1.html" onload="iHeight();"class="myFrame01" scrolling="no" id="myFrame" style="width:90%; min-height:100px;" name="frame01"></iframe>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+  .icon {
+    display: flex;
+    justify-content: flex-start; /* 컨테이너의 여백 없애기 */
+    width: 200px; /* 원하는 너비로 조절하세요 */
+  }
+
+  .radio-icons {
+    position: relative;
+    top: 20px;
+
+    flex: 1; /* 컨테이너의 공간을 동일하게 분할 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+
+  .radio-icons:first-child {
+    margin-left: 130px; /* 첫 번째 라디오 버튼의 오른쪽 여백 추가 */
+  }
+
+  .radio-icons input[type="radio"] {
+    display: none; /* 기본 라디오 버튼 숨김 */
+  }
+
+  .radio-label {
+    cursor: pointer;
+    border: 1px solid #000;
+    padding: 5px 10px; /* 패딩 조정 */
+    transition: background-color 0.3s, color 0.3s; /* 호버 효과를 위한 트랜지션 추가 */
+    border-radius: 3px; /* 테두리를 조금 더 부드럽게 만들기 */
+    font-size: 14px; /* 아이콘 크기 조정 */
+  }
+
+  .radio-container input[type="radio"]:checked + .radio-label {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .radio-label:hover {
+    color: blue; /* 호버 효과 텍스트 색상 */
+  }
+</style>
+</head>
+<body>
+<div class="icon">
+
+  <div class="radio-icons">
+    <input type="radio" id="option01" name="OPTION" value="option01" checked>
+    <label for="option01" class="radio-label" tabindex="1" onclick="window.location.href='a.html'"><i class="fa-brands fa-microsoft"></i></label>
+  </div>
+  <div class="radio-icons">
+    <input type="radio" id="option02" name="OPTION" value="option02">
+    <label for="option02" class="radio-label" tabindex="2"><i class="fa-solid fa-bars"></i></label>
+  </div>
+  
+</div>
+
+<script>
+  document.getElementById("option01").addEventListener("change", function() {
+    window.location.href = "nexon.html";
+  });
+
+  document.getElementById("option02").addEventListener("change", function() {
+    window.location.href = "nexon_home/nexon_game2.html";
+  });
+</script>
+
+</body>
+</html>

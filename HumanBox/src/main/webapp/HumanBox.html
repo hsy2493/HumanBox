@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<style type="text/css">
+iframe#nexonGamesIframe{
+	width:95%; height:270%;
+	position: absolute;
+	top: 1000px;
+	border: none; 
+}
+	
+	
+.layout{
+	top:0px;left:0;
+	width:100%;height:100%;
+	position:fixed;
+	z-index:9998;
+	background-color: rgba(0,0,0,0.5);
+	display:none;
+}
+/*버튼에 마우스를 올렸을 시 커서를 포인터로 바꿈.*/
+button{cursor: pointer;}
+/*onclick 기능이 있는 요소에 마우스 올렸을 시 커서를 포인터로 바꿈.*/
+[onclick] {cursor:pointer;}
+/*우하단 버튼의 위치와 꾸밈*/
+#remote button{
+	position:fixed;
+	right:50px;
+	width:37px;height:37px;
+	display:block;
+	background:gainsboro;
+	color: gray;
+	font-weight: bold;
+	font-size:15px;
+}
+#remote>button#adBtn{
+	bottom:60px;
+	border-style:none;
+}
+/*우하단 광고창 버튼에 마우스 올렸을 시 꾸밈*/
+#remote>button#adBtn:hover{
+	background: skyblue;
+	color: white;
+}
+/*위로 올려주는 버튼 꾸밈*/
+#remote>button#goToTop{
+	bottom:15px;
+	border : 2px solid darkgray;
+}
+/*우하단 팝업창 꾸밈&위치*/
+#remote>div{
+	position: fixed; right: 50px; bottom: 15px;
+	width:240px; height:280px;
+	bottom:15px;
+	overflow: hidden;
+	z-index:9997;
+}
+#remote>div>div:nth-child(1){
+	width: 240px; height: 140px;
+	margin:0;
+	float: left;
+}
+#remote>div>div:nth-child(1)>img{
+	width:100%;height:100%;
+}
+#remote>div>div:nth-child(2){
+	width: 240px; height: 140px;
+	float: right;
+	background: #e9ecef;
+	margin:0;
+}
+/*초기에 우하단 팝업창 없애기*/
+#gameAdObj{
+	display: none;
+}
+/*우하단 팝업창 안의 폰트 꾸밈*/
+#AdInfo>h3{
+	font-size:15px;
+}
+#AdInfo p{
+	font-size:12px;
+	font-weight:bold;
+	color:gray;
+} 
+/*최소화 버튼(팝업 닫기 버튼)꾸밈&위치*/
+#AdInfo>p:nth-of-type(2){
+	position: absolute;
+	top: 170px;
+	right: 10px;
+	text-decoration: underline;
+}
+#AdInfo>p:nth-of-type(2):hover{color:skyblue;} 
+/*중앙 팝업창과 안의 폰트와 이미지 꾸밈&위치*/
+.gamePlayVidsPopup{
+	background: white;
+	display:none;
+	z-index:9999;
+}
+div.gamePlayVidsPopup{
+	width:70%; height:60%;
+	position: fixed; top: 15%; left: 15%;
+	border-radius: 15px;
+	padding: 20px;
+}
+#leftGamePopup, #gamePlayVidsList{
+	display: inline-block;
+}
+#gamePlayVidsList div{
+	position: absolute;
+	top: 100%;
+}
+#gamePlayVidIntro p{margin: 5px 0; padding: 5px 0;}
+
+#leftGamePopup{
+	width:65%;height:100%;
+}
+#gamePlayVidsList{
+	width:25%;height:92%;
+	overflow: auto;
+}
+#gameIconImage{
+	position: absolute;
+	top: 40px;
+	right: 350px;
+}
+#gameAdHashtag{
+	color: gray;
+	font-size: 13px;
+}
+/*팝업 닫기버튼 꾸밈&위치*/
+#gamePlayVidsPopupClose{
+	position: absolute;
+	top: 0px;
+	right: 40px;
+	font-weight: bold;
+	font-size: 40px;
+}
+#gamePlayVidsList{
+	text-align: center;
+}
+#gamePlayVidsList>img{
+	width: 90%; height: 30%;
+}
+#gamePlayVidsList>img.nowPlaying{
+	border: 8px solid skyblue;
+}
+/**/
+	#recomGames{
+		position: absolute;
+		top:500px;
+		left:8%;
+		width: 480px;
+		height: 470px;
+		margin-top: 60px;
+		margin-left: 23px;
+		overflow: hidden;
+	}
+	#recomGames button:nth-child(2){ margin-right:0; }
+	#recomGames #rTitle{
+		margin-bottom:15px;
+		font-size: 25px;
+		font-weight: bold;
+	}
+	#rUnderTitleTxt{font-weight: 900; color: deepskyblue;}
+	#rGames{
+		white-space: nowrap;
+	}
+	#rUTL, #rUTR{
+		border-color: gray; font-weight: bold; color: gray;
+	}
+	#rUTL:hover, #rUTR{
+		cursor: pointer;
+	}
+	#rGames>div{
+		width: 155px; height: 300px;
+		display: inline-block;
+		overflow: hidden;
+		transition: transform 0.5s ease; 
+		text-align: center;
+	}
+	#rGames div img{ 
+		width: 100%;
+		height: auto;
+	}
+	#rGames>.gameItem>div{
+		width: 155px; height: 195px;
+		overflow: hidden;
+	}
+	#rGames>.gameItem{
+		background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%); 
+		z-index: 1;
+	}
+	#rGames img:hover {
+		transform: scale(1.1); 
+		filter: brightness(110%);
+		transition: transform 0.5s ease; 
+	}
+	#rGames img{position: relative;}
+	#rUnderTitleTxt, #rUnderTitleBtn{ display:inline-block; }
+	#rUnderTitleBtn{
+		margin-bottom: 23px;
+		margin-right: 15px;
+		display: flex; justify-content: flex-end;
+		height: 30px;line-height: 25px; 
+	}
+	.gmsInf{font-weight: bold;text-align: left;}
+	#remote>button{z-index:9996; }
+/**/
+div#nexonIdLoginOrOthers{
+	width:400px;height:300px;
+}
+#nexonIdLogin>button{
+	width:380px;height:100px;
+	background:black;
+	color:white;
+	padding:5px;
+	font-size:18px;
+	font-weight:bold;
+}
+#otherLogins button{
+		position:relative;
+		top:10px;
+		padding:5px;
+		width:185px;height:100px;
+		display:inline-block;
+		background:#5f5f5f;
+		color:white;
+		font-weight:bold; 
+		font-size:18px;
+}
+#otherLogins button:nth-child(2){
+	position:relative;
+	left:10px;
+}
+#nexonIdLoginOrOthers{
+	position:absolute;
+	top: 675px;
+	left:57%;
+}
+#nexonIdLoginOrOthers button:hover{
+	background:#0055FF;
+}
+/*아래 김태형님 style*/
+		.slideshow {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Set your desired height */
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slideactive {
+            opacity: 1;
+        }
+        #gameList {
+  			display: none; /* 초기에는 숨겨진 상태 */
+           width:35%;
+           position:absolute;
+           top:90px;left:10px;
+           background:white;
+           z-index:9995;
+		}
+
+		#gameList ul {
+  			list-style-type: none;
+ 			 padding: 0;
+  			display:grid;
+		}
+
+		#gameList ul li {
+		  padding: 10px;
+		  background-color: #f0f0f0;
+		  border-bottom: 1px solid #ccc;
+		}
+		
+		#gameList ul li:hover {
+		  background-color: #ddd;
+		
+		}
+		#mainlogo{
+			position:relative;
+			left:35%;
+			
+		}
+		#menuBtn{
+		font-size:170%;
+		border:none;
+		cursor:pointer;
+		background:none;
+		}
+
+	</style>
+	
+</head>
+<body>
+<body>
+		<!-- 아래 김태형님 html -->
+<div>
+<button  id="menuBtn"><i class="fa-solid fa-bars"></i> 메뉴</button>
+
+<nav id="gameList">
+<div>
+<div><span>전체게임</span>   <a href="">고객센터</a></div>
+<div>
+	<div>
+	  <ul style="float: left; width: 50%">
+	 <h3>A-Z</h3>
+	    <li>FC모바일</li>
+	    <li>FC온라인</li>
+	    <li>THE Finals</li>
+	     <li>V4</li>
+	  </ul>
+	 
+	 
+	  <h3>ㄱ~ㄹ</h3>
+	  <ul style="float: left; width: 50%">
+	    <li>고질라 디펜스 포스</li>
+	    <li>나이트 워커</li>
+	    <li>넥슨타운</li>
+	     <li>던전앤파이터</li>
+	     <li>데이브 더 다이버</li>
+	     <li>드래곤네스트</li>
+	  </ul>
+	 
+	  
+	   <h3>ㅁ~ㅅ</h3>
+	  <ul style="float: left; width: 50%">
+	    <li>마비노기</li>
+	    <li>마비노기영웅전</li>
+	    <li>메이플스토리</li>
+	     <li>메이플스토리 월드</li>
+	  </ul>
+	 
+  </div>
+  <div>
+	   
+	  <H3>ㅇ~ㅈ</H3>
+	  <ul style="float: left; width: 50%">
+	    <li>아스가르드</li>
+	    <li>아키에이지</li>
+	    <li>어둠의 전설</li>
+	     <li>엘소드</li>
+	     <li>알랜시아</li>
+	     <li>진삼국무쌍</li> 
+	  </ul>
+	  <H3>ㅊ~ㅋ</H3>
+ 	 <ul style="float: left; width: 50%">
+	    <li>카운터스트라이크온라인</li>
+	    <li>카트라이더 러쉬플러스</li>
+	    <li>카트라이더 드리프트</li>
+	     <li>크레이지아케이드</li>
+	     <li>클로저스</li> 
+	  </ul>
+	  <h3>ㅌ~ㅎ</h3>
+	   <ul style="float: left; width: 50%">
+	    <li>테일즈런너</li>
+	    <li>테일즈위버</li>
+	    <li>파이널판타지14</li>
+	     <li>퍼스트 디센던트</li>
+	     <li>프리시어 전기</li> 
+	  </ul>
+  </div>
+  </div>
+  </div>
+</nav>
+
+<img id="mainlogo" src="mainlogo.gif" alt="logo">
+<!-- 김남원 -->
+	<div class="layout"></div>
+	<div id="remote">
+		<button onclick = "blockGameAd()" id = "adBtn">▶</button>
+		<button id = "goToTop" onclick = "scrollToTop()">&uarr;</button>
+		<div id = "gameAdObj">
+			<div id = AdImg>
+				<img onclick="openGamePlayVidsPopup()" src="recGameImages/adImage.PNG"/>
+			</div>
+			<div id = AdInfo>
+				<h3></h3>
+				<p>휴먼교육센터 강의를 들으세요</p>
+				<p onclick = "noneGameAd()">최소화</p>
+			</div>
+		</div>
+	</div>
+	<div class="gamePlayVidsPopup">
+		<p onclick="closeGamePlayVidsPopup()" id="gamePlayVidsPopupClose">x</p>
+		<div id = leftGamePopup>
+			<div id = "gamePlayVidIntro">
+				<p><strong>유저님</strong>을 위해 준비했어요.</p><br>
+				<p><strong>혹시 이 영상 아직 안보셨어요?</strong></p><br>
+				<p id="gameAdHashtag">#카트라이더드리프트 #카트라이더드리프트꿀잼</p>
+				<a href="">
+					<img src="recGameImages/adGameIcon.png" id="gameIconImage"/>
+				</a>
+			</div>
+			<div id = "gamePlayVideo">
+				<iframe width="100%" height="300" src="https://www.youtube.com/embed/cbg5Vv0bP1s?si=GSz3ncUDSGSrGUZZ" 
+					title="YouTube video player" frameborder="0" 
+					allow="accelerometer; autoplay; clipboard-write; 
+					encrypted-media; gyroscope; picture-in-picture; web-share" 
+					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+				</iframe>
+			</div>
+			<div id = "gamePlayVidInfo">
+				유튜브에서 API정보 따오기
+			</div>
+		</div>
+		<div id = gamePlayVidsList>
+			<p><strong>이런 영상은 어떄요?</strong><br></p>
+			<img class="gamePlayVidThumbnails" src="recGameImages/gmPVT_01.jpg"
+				onclick="clickGamePlayVidsList(this)"/>
+			<img class="gamePlayVidThumbnails nowPlaying" src="recGameImages/gmPVT_02.jpg"
+				onclick="clickGamePlayVidsList(this)"/>
+			<img class="gamePlayVidThumbnails" src="recGameImages/gmPVT_03.jpg"
+				onclick="clickGamePlayVidsList(this)"/>
+			<img class="gamePlayVidThumbnails" src="recGameImages/gmPVT_04.jpg"
+				onclick="clickGamePlayVidsList(this)"/>
+			<img class="gamePlayVidThumbnails" src="recGameImages/gmPVT_05.jpg"
+				onclick="clickGamePlayVidsList(this)"/>
+			<img class="gamePlayVidThumbnails" src="recGameImages/gmPVT_06.jpg"
+				onclick="clickGamePlayVidsList(this)"/>
+			<img class="gamePlayVidThumbnails" src="recGameImages/gmPVT_07.jpg"
+				onclick="clickGamePlayVidsList(this)"/>
+			<img class="gamePlayVidThumbnails" src="recGameImages/gmPVT_08.jpg"
+				onclick="clickGamePlayVidsList(this)"/>
+		</div>
+	</div>
+
+		<div id = recomGames>
+			<div id = rTitle>추천게임</div>
+			<div id = rUnderTitle>
+				<div id = rUnderTitleTxt>
+					#최근 플레이어 수 급증한
+				</div>
+				<div id = rUnderTitleBtn>
+					<button id = rUTL onclick = "recomOptsLeftSlide()">&lt;</button>
+					<button id = rUTR onclick = "recomOptsRightSlide()">&gt;</button>
+				</div>
+			</div>
+			<div id = allRGames>
+				<div id = rGames>
+					<div class = "gameItem">
+						<div>
+							<a href=""><img alt= img1></a>
+						</div>
+						<div class = gmsInf>메이플스토리 월드</div>
+					</div>
+					<div class = "gameItem">
+						<div>
+							<a href=""><img alt= img2></a>
+						</div>
+						<div class = gmsInf>바람의 나라:연</div>
+					</div>
+					<div class = "gameItem">
+						<div>
+							<a href=""><img alt= img3></a>
+						</div>
+						<div class = gmsInf>크레이지 아케이드</div>
+					</div>
+					<div class = "gameItem">
+						<div>
+							<a href=""><img alt= img4></a>
+						</div>
+						<div class = gmsInf>메이플스토리2</div>
+					</div>
+					<div class = "gameItem">
+						<div>
+							<a href=""><img alt= img5></a>
+						</div>
+						<div class = gmsInf>사이퍼즈</div>
+					</div>
+					<div class = "gameItem">
+						<div>
+							<a href=""><img alt= img6></a>
+						</div>
+						<div class = gmsInf>마비노기 영웅전</div>
+					</div>
+					<div class = "gameItem">
+						<div>
+							<a href=""><img alt= img7></a>
+						</div>
+						<div class = gmsInf>파이널판타지</div>
+					</div>
+					<div class = "gameItem">
+						<div>
+							<a href=""><img alt= img8></a>
+						</div>
+						<div class = gmsInf>블루 아카이브</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+<!--  -->
+<div id="nexonIdLoginOrOthers">
+	<div id="nexonIdLogin">
+		<button onclick="location.href='Login/Login_basic.html'">NEXON ID 로그인</button>
+	</div>
+	<div id="otherLogins">
+		<button>일회용 로그인</button><button>QR 로그인</button>
+	</div>
+</div>
+<script src="script.js"></script>
+</div>
+<div id="nexonBanner" class="slideshow">
+    <img id="nexonImage" src="firstImage.jpg" alt="Nexon Banner">
+</div>
+
+
+<iframe id="nexonGamesIframe" src="nexon.html">끼얏호 ^ㅗ^</iframe>
+
+
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+//중앙 팝업 동영상 선택
+var iframeObj = document.querySelector("iframe");
+//중앙 팝업 우측 동영상 리스트 관련 코드
+var gamePlayVidsList = document.querySelectorAll("#gamePlayVidsList img");
+//중앙 팝업 창 뜰 시 주위 어둡게 하는 레이아웃 선택
+var layout = document.querySelector(".layout"); 
+// 우하단 광고 팝업 선택
+var gameAdObj = document.querySelector("#gameAdObj"); 
+// 눌렀을 때 광고 팝업 나오는 버튼 선택
+var gameAdBtn = document.querySelector("#adBtn"); 
+// 중앙 팝업창 선택
+var gameVidsPopup = document.querySelector("div.gamePlayVidsPopup");
+//동영상 리스트 클릭했을 때 함수, 동영상 주소 배열
+var gameVidsSrc = ["https://www.youtube.com/embed/MNdIwLK4EqU?si=wHLgJY0XagAeXFr1",
+	"https://www.youtube.com/embed/cbg5Vv0bP1s?si=nv_qfUEpFQ8Rb5GB",
+	"https://www.youtube.com/embed/ioRJ5pt2Nv4?si=UVTcVNbFMaeyoXxv", 
+	"https://www.youtube.com/embed/EMA5W3nqbDQ?si=QYD9Vabm6i8yV_vG", 
+	"https://www.youtube.com/embed/R2PetziCVNY?si=5K5kI3X6zUZP7H1R",
+	"https://www.youtube.com/embed/JbEY9cXOI6Y?si=LwfyNn4p22",
+	"https://www.youtube.com/embed/PeDTncc_-5M?si=ZOUGRlKJKpPnurpq" ,
+	"https://www.youtube.com/embed/ctYRq75G5po?si=JSna1C_tAjpWtCXt"]
+function clickGamePlayVidsList(obj){
+	gamePlayVidsList.forEach(function(gamePlayVidsList){
+		gamePlayVidsList.classList.remove("nowPlaying");
+	});
+	obj.classList.add("nowPlaying");
+	
+	var index = Array.from(gamePlayVidsList).indexOf(obj);
+	iframeObj.src = gameVidsSrc[index];
+}
+// 팝업창 열 때 
+function openGamePlayVidsPopup(){
+	gameVidsPopup.style.display="block";
+	layout.style.display="block";
+}
+// 팝업창 닫을 때
+function closeGamePlayVidsPopup(){
+	gameVidsPopup.style.display="none";
+	layout.style.display="none";
+}
+// 스크롤이 맨 위에 있는 상태 선택
+function scrollToTop(){ document.documentElement.scrollTop = 0; }
+// 우하단 팝업창 열기
+function blockGameAd(){ gameAdObj.style.display = "block"; }
+// 우하단 팝업창 닫기
+function noneGameAd(){ gameAdObj.style.display = "none"; }
+// 스크롤 움직일 때 줄 이벤트 & 페이지 로드 후 초기 이벤트
+function handleScroll() {
+	var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	if (scrollTop === 0) {
+		blockGameAd();
+	}
+	else {
+		noneGameAd();
+	}
+}
+// 브라우저 창이 로드 될 때, 초기 이벤트
+// 스크롤 할 때마다 이벤트 발생
+window.addEventListener("load", handleScroll);
+window.addEventListener("scroll", handleScroll);
+
+	//현재 보여줄 게임창
+	var slideCnt = 1; 
+	//추천게임이미지를 전부 선택
+	var recomOpts = document.querySelectorAll("#rGames img");
+	//추천게임이미지에 전부 이미지 삽입(소스)
+	for(var i=0;i<recomOpts.length;i++){
+		recomOpts[i].src = "recGameImages/rcmGameImage"+(i+1)+".png"
+	}
+	//추천게임이미지 들어갈 div들 전부 선택
+	var recomOptsDivs = document.querySelectorAll("#rGames>div");
+	//오른쪽버튼을 눌렀을 때 오른쪽에서 왼쪽으로 게임이 하나씩 넘어가는 기능 
+	function recomOptsRightSlide(){
+		if(slideCnt==6)
+			return;
+		slideCnt++;
+		for (var i = 0;i<recomOptsDivs.length;i++){
+			recomOptsDivs[i].style.transform = "translateX(" + 
+					(slideCnt -1) * -160+ "px)";
+		}
+	}
+	//왼쪽버튼을 눌렀을 때 왼쪽에서 오른쪽으로 게임이 하나씩 넘어가는 기능
+	function recomOptsLeftSlide(){
+		if(slideCnt==1)
+			return;
+		slideCnt--;
+		for (var i = 0;i<recomOptsDivs.length;i++){
+			recomOptsDivs[i].style.transform = "translateX(" + 
+			(slideCnt -1) * -160+ "px)";
+		}
+	}
+	/*아래 김태형님 js*/
+	const menuBtn = document.getElementById('menuBtn');
+	const gameList = document.getElementById('gameList');
+	
+	menuBtn.addEventListener('click', () => {
+  	if (gameList.style.display === 'none') {
+    gameList.style.display = 'block';
+  	} else {
+    gameList.style.display = 'none';
+  	}
+	});
+	/*태형님 2nd*/
+	var imagePaths = ["first.png", "second.png", "third.png", "forth.png"];
+        var currentIndex = 0;
+       
+        
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % imagePaths.length;
+            var imageUrl = imagePaths[currentIndex];
+            var nexonBanner = document.getElementById("nexonBanner");
+            var nexonImage = document.getElementById("nexonImage");
+
+            if (!nexonBanner) {
+                console.error("nexonBanner가 존재하지 않습니다.");
+                return;
+            }
+
+            var newImage = new Image();
+            newImage.onload = function () {
+                // 이미지를 추가하기 전에 이전 이미지를 삭제합니다.
+                if (nexonImage && nexonImage.parentNode) {
+                    nexonImage.parentNode.removeChild(nexonImage);
+                }
+
+                // 새로운 이미지를 추가합니다.
+                newImage.classList.add("slide");
+                nexonBanner.appendChild(newImage);
+                setTimeout(function () {
+                    newImage.classList.add("slideactive");
+                }, 20);
+            };
+            newImage.src = imageUrl;
+        }
+
+        var intervalId = setInterval(changeImage, 5000);
+
+        window.onload = function () {
+            changeImage();
+        };
+       
+/*
+ 
+*/
+//
+</script>
+</html>

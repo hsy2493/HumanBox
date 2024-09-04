@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 320px; 
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 3px;
+            box-shadow: 1px rgba(0, 0, 0, 0.1);
+            text-align: center; 
+            margin: auto; 
+        }
+        h1{
+            color: #0022ff;
+            margin-bottom: 20px;
+            text-align:center;
+            
+            
+        }
+        
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"],
+        h2{
+            width: 130%;
+            height: 50px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 1px;
+            border-color:#f1efef;
+            box-sizing: border-box; 
+            
+            
+        }
+        
+    
+        .logbox{
+            font-size: 10px;
+            text-align: left;
+            
+           
+        }
+        input[type="submit"] {
+            background-color: #1e1e1e;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0022ff;
+        }
+        h3 {
+            color: #231e1e;
+            font-size: 10px;
+            margin-top: 10px;
+            text-align: left;
+        }
+        h3 a {
+            color: #3c3d41;
+            text-decoration: none;
+            margin-right: 10px;
+            text-align: left;
+        }
+        h3 a:hover {
+            color: #4800ff;
+        }
+        h2[type="submit"]{
+            color: #ffffff;
+        
+        }
+        a{
+            text-decoration: none;
+            color: rgb(119, 119, 119);
+        }
+        .buttonlogin{
+            margin-left: -20px;
+        }
+        .buttonlogin div{
+        	width: 100PX;
+        	height: 50x;
+    		background-color: #fff9f9;
+    		border: 1px solid rgb(221, 215, 215);
+            text-align: center;
+        	
+        	
+        
+        }
+        .buttonlogin div:hover{
+        	border-color:blue;
+        	cursor:pointer; 
+        }
+        button[type="button"]{
+           width:415px;
+           height: 35px;
+           margin: 3px;
+           background-color:white;
+           border: 1px solid rgb(182, 182, 182);
+           font-size: 15px;
+           text-align: left;
+           font-weight: bold;
+        }
+        button>img{
+            width:20px;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human Box</h1>
+        <form id="loginForm">
+            <input type="text" id="id" placeholder="HumanBox아이디 (아이디 또는 이메일)" required><br>
+            <input type="password" id="pwd" placeholder="비밀번호" required><br>
+            <div class="logbox"><input type="checkbox" name="checkbox">로그인 상태유지</input></div></class>
+            &nbsp;&nbsp;&nbsp;
+            <input type="submit" value="로그인"></form>
+            <h3><a href="../MambersShip/mamber_basic.html">회원가입</a>
+            <a href= "https://member.nexon.com/find/findid.aspx">아이디 찾기</a>
+            <a href="https://member.nexon.com/find/findpwd.aspx">비밀번호 찾기</a></h3>
+        <h2>
+          <div class="buttonlogin">
+            <button type="button"><img src="facebook.png"><a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=198868903993596&kid_directed_site=0&app_id=198868903993596&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fscope%3Demail%26client_id%3D198868903993596%26redirect_uri%3Dhttps%253A%252F%252Flogin.nexon.com%252Flogin%252Ffacebook%252FAccessToken%26state%3DSa3JUCp29JN6qHF82bGQPdGtNCOZoUWXl7jVMUAA_et4yb9G0O87Rk5Es9Po_K2HXIQAYvGaWJlQSFI1a0ia3lAUCNSYxVsgBNPRsZ1LVNIeuwG80HNIRGAPxk4lVoseJCgm5wI8iMqfEOB2x5m_27q4%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D74c750b4-6ff8-41c7-b450-cecceb7390a8%26tp%3Dunspecified&cancel_url=https%3A%2F%2Flogin.nexon.com%2Flogin%2Ffacebook%2FAccessToken%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DSa3JUCp29JN6qHF82bGQPdGtNCOZoUWXl7jVMUAA_et4yb9G0O87Rk5Es9Po_K2HXIQAYvGaWJlQSFI1a0ia3lAUCNSYxVsgBNPRsZ1LVNIeuwG80HNIRGAPxk4lVoseJCgm5wI8iMqfEOB2x5m_27q4%23_%3D_&display=page&locale=ko_KR&pl_dbl=0">
+                &nbsp;&nbsp;Facebook 계정으로 로그인</a></button><br>
+            <button type="button"><img src="google.png"><a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?scope=profile%20email&response_type=code&client_id=919331056041-46d8sbblkb1ek3o02iva7vaiqth50clq.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Flogin.nexon.com%2Flogin%2Fgoogle%2FAccessToken&state=qtpwpq3PLIofgeTAksuaKT~kkCznJRjXXt80dQPBVrQu~xlef1emaXaF8rXTK2kiG6gq3~KyFOkHANVQXr1Ih_zI9ik6amM~hruyzxWVUSKTpxBufg7wMdi5l7fSO4lQaztQycCHvru8SJwIR0tXd~J1&include_granted_scopes=true&access_type=offline&service=lso&o2v=2&ddm=0&flowName=GeneralOAuthFlow">
+                &nbsp;&nbsp;Google 계정으로 로그인</a></button><br>
+            <button type="button"><img src="naver.png"><a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&svctype=0&client_id=9tEsmZTa1qdnr6eIz2yO&redirect_uri=https%3a%2f%2flogin.nexon.com%2flogin%2fnaver%2fAccessToken&state=fVLbTBGjakuEyeLrk17ToFiAvRXH5YbBodSdSMHmXtO4bccUMUtPMoPoheRBHNw3kMsZiFpabN9VF_BPUuMlQJKk2LJZ6_Eh6riQAQGYbN1sz9Kdj9uE97XB89gFEhGvpaqz0FaLRP94iV8sxBPXPTvi">
+                &nbsp;&nbsp;Naver 계정으로 로그인</a></button><br>
+            <button type="button"><img src="apple.png"><a href="https://appleid.apple.com/auth/authorize?client_id=com.nexon.tpa.sign&redirect_uri=https://login.nexon.com/login/apple/AccessToken&response_type=code&scope=email&response_mode=form_post&state=gULOI1wVZWGIMH8yqCR5aUiXYGiNLypa57ouQLUjzLGNiAZWfoNUqTeNQOW69h6cUdj8UaOjOomJpI7qn1473UH4_0H1zJntupSj9Xi_8U5Qy4SxPP0csRipL1FzX1nMAaSsY9I1MIsjOZ0jSV8_c4tJ">
+                &nbsp;&nbsp;Apple 계정으로 로그인</a></button></div>
+        </h2>
+            
+    </div>
+</body>
+<script type="text/javascript">
+var id = "id";
+var pwd = "pwd";
+
+
+if(id=="id"&& pwd=="pwd"){
+    alret("로그인 완료되었습니다")
+}else{
+    alret("아이디와 비밀번호를 확인해주세요.")
+}
+</script>
+ 
+</html>

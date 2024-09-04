@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="${encoding}">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+window.onload = function() {
+    window.parent.postMessage(
+    document.body.scrollHeight,"nexon.html"
+)
+};
+
+
+</script>
+<style>
+.game{
+    position: relative;top:-50px;
+    width: 295px;height: 310px;
+    display: inline-block;
+    margin-left: 30px;margin-top: 70px;
+    overflow: hidden;
+}
+.game:hover{
+    box-shadow: 0 6px 8px lightgrey;
+    cursor:pointer;
+}
+.game:hover img{
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+.imgbox{
+    width: 295px;height: 195px;
+    overflow: hidden;
+}
+.game img {
+    width: 100%; /* 이미지를 게임 상자에 꽉 차게 설정 */
+    height: auto;
+    object-fit: cover; /* 이미지 비율 유지 및 잘림 방지 */
+}
+b{
+    position: relative;top: 15px;left: 15px;
+}
+span{
+    font-size: 13px;
+    position: relative;top: 40px;right: 85px;
+}
+</style>
+</head>
+<body>
+
+<div class="game">
+    <div class="imgbox">
+        <img src="media/던파듀얼.png" alt="Game 1">
+    </div> 
+    <b>던전앤파이터 듀얼</b>
+    <span>대전격투</span>
+</div>
+
+<div class="game">
+    <div class="imgbox">
+        <img src="media/카트 드리프트.png" alt="Game 1">
+    </div>
+    <b>카트라이더: 드리프트</b>
+    <span>레이싱</span>
+</div>
+
+<div class="game">
+    <div class="imgbox">
+        <img src="media/더 파이널.png" alt="Game 1">
+    </div>
+    <b>THE FINALS</b>
+    <span>팀 기반 FPS</span>
+</div>
+
+<div class="game">
+    <div class="imgbox">
+        <img src="media/퍼스트 버서커.png" alt="Game 1">
+    </div>
+    <b>퍼스트 버서커: 카잔</b>
+    <span>하드코어 액션RPG</span>
+</div>
+
+<div class="game">
+    <div class="imgbox">
+        <img src="media/퍼스트 디센던트.png" alt="Game 1">
+    </div>
+    <b>퍼스트 디센던트</b>
+    <span>루트슈터</span>
+</div>
+</body>
+
+</html>

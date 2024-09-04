@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="${encoding}">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+window.onload = function() {
+    window.parent.postMessage(
+    document.body.scrollHeight,"nexon.html"
+)
+};
+
+
+</script>
+<style>
+.game{
+    position: relative;top:-50px;
+    width: 295px;height: 310px;
+    display: inline-block;
+    margin-left: 30px;margin-top: 70px;
+    overflow: hidden;
+}
+.game:hover{
+    box-shadow: 0 6px 8px lightgrey;
+    cursor:pointer;
+}
+.game:hover img{
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+.imgbox{
+    border: 1px solid black;width: 295px;height: 195px;
+    overflow: hidden;
+}
+.game img {
+    width: 100%; /* 이미지를 게임 상자에 꽉 차게 설정 */
+    height:auto;
+    object-fit: cover; /* 이미지 비율 유지 및 잘림 방지 */
+}
+b{
+    position: relative;top: 15px;left: 15px;
+}
+span{
+    font-size: 13px;
+    position: relative;top: 40px;right: 85px;
+}
+</style>
+</head>
+<body>
+
+<div class="game">
+    <div class="imgbox">
+        <img src="media/피파.png" alt="Game 1">
+    </div>
+    <b>FC 온라인</b>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;스포츠</span>
+</div>
+    
+<div class="game">
+    <div class="imgbox">
+        <img src="media/블루아카이브.jpg" alt="Game 1">
+    </div>
+    <b>블루 아카이브</b>
+    <span>수집형RPG</span>
+</div>
+    
+<div class="game">
+    <div class="imgbox">
+        <img src="media/메M.png" alt="Game 1">
+    </div>
+    <b>메이플스토리M</b>
+    <span>RPG</span>
+</div>
+    
+<div class="game">
+    <div class="imgbox">
+        <img src="media/피파 모바일.png" alt="Game 1">
+    </div>
+    <b>FC 모바일</b>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;스포츠</span>
+</div>
+    
+<div class="game">
+    <div class="imgbox">
+        <img src="media/프리시아 전기.png" alt="Game 1">
+    </div>
+    <b>프리시아 전기</b>
+    <span>MMORPG</span>
+</div>
+    
+<div class="game">
+    <div class="imgbox">
+        <img src="media/던파 모바일.jpg" alt="Game 1">
+    </div>
+    <b>던전앤파이터 모바일</b>
+    <span>ACTION RPG</span>
+</div>
+
+</body>
+
+</html>
