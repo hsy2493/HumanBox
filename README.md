@@ -3,7 +3,7 @@
 2. 주제 : 온라인 게임 사이트<br>
 3. 목적 : 고객이 온라인에서 HumanBox 사이트를 통하여 다양한 온라인 게임을 플레이 할 수 있게 하는 것을 주목적으로 진행된 자격증 사이트 프로젝트입니다.<br>
 4. 주요 기능 : 로그인, 회원가입<br>
-- 일정표 : ![image](https://github.com/user-attachments/assets/239f41bd-0286-4f89-b40b-6b3e80c6e7de) <br>
+- 일정표, 역할 분담 : ![image](https://github.com/user-attachments/assets/239f41bd-0286-4f89-b40b-6b3e80c6e7de) <br>
 
 - 요구사항 정의서 : ![image](https://github.com/user-attachments/assets/3c4bab8b-86e7-458e-99bf-d4be55acf3f1) ![image](https://github.com/user-attachments/assets/0b3d5142-32ee-4e7f-bb30-036018e4d362) <br>
 - 워크 플로우 : ![image](https://github.com/user-attachments/assets/b626f548-35ea-4118-bd3a-37585df3afe1) <br>
