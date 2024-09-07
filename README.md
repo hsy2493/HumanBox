@@ -7,7 +7,8 @@
 
 - 요구사항 정의서 : ![image](https://github.com/user-attachments/assets/3c4bab8b-86e7-458e-99bf-d4be55acf3f1) ![image](https://github.com/user-attachments/assets/0b3d5142-32ee-4e7f-bb30-036018e4d362) <br>
 - 워크 플로우 : ![image](https://github.com/user-attachments/assets/b626f548-35ea-4118-bd3a-37585df3afe1) <br>
-- PPT 자료 (https://github.com/hsy2493/HumanBox/issues/1#issue-2509844041)
+- PPT 자료 <br>
+  https://github.com/hsy2493/HumanBox/issues/1#issue-2509844041 <br>
 5. 작업 툴 :
 - Front-end : HTML, CSS, Javascript<br>
 6. 작업 인원 : 3명<br>
