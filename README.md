@@ -18,7 +18,7 @@
 
 -회원가입<br>
 ![image](https://github.com/user-attachments/assets/5ee3579f-6d7d-473d-9066-a3a3b52b4180)<br>
-<설명> 회원가입은 div 태그에 class를 추가하여 style 태그로 text-align 태그 등을 활용하여 화면 구현을 진행하였으며, 각 회원방식마다 img 태그와 onclick 태그를 활용하여 링크를 등록하면서 화면을 구현하였습니다.<br>
+<설명> 회원가입은 div 태그에 class를 추가하여 style 태그로 text-align 태그 등을 활용하여 화면 구현을 진행하였으며, 각 회원방식마다 img 태그와 onclick 태그를 활용하여 링크를 등록하면서 화면 구현을 진행하였습니다.<br>
 * 회원가입 상세 코드 (https://github.com/hsy2493/HumanBox/blob/master/HumanBox/src/main/webapp/MambersShip/mamber_basic.html)<br>
 
 <b> 8. 성과 : <br>
