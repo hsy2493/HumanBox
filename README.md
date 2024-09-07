@@ -5,8 +5,8 @@
 4. 주요 기능 : 로그인, 회원가입<br>
 - 일정표, 역할 분담 : ![image](https://github.com/user-attachments/assets/239f41bd-0286-4f89-b40b-6b3e80c6e7de) <br>
 
-- 요구사항 정의서 :
-  (1) 로그인, (2) 회원가입 ![image](https://github.com/user-attachments/assets/3c4bab8b-86e7-458e-99bf-d4be55acf3f1) ![image](https://github.com/user-attachments/assets/0b3d5142-32ee-4e7f-bb30-036018e4d362) <br>
+- 요구사항 정의서 : <br>
+  (1) 로그인 & (2) 회원가입 ![image](https://github.com/user-attachments/assets/3c4bab8b-86e7-458e-99bf-d4be55acf3f1) ![image](https://github.com/user-attachments/assets/0b3d5142-32ee-4e7f-bb30-036018e4d362) <br>
 - 워크 플로우 : ![image](https://github.com/user-attachments/assets/b626f548-35ea-4118-bd3a-37585df3afe1) <br>
 - PPT 자료 <br>
   https://github.com/hsy2493/HumanBox/issues/1#issue-2509844041 <br>
