@@ -20,15 +20,15 @@
 (1) 로그인<br>
 ![image](https://github.com/user-attachments/assets/663c48e4-b9ce-4327-a365-3528d472e486)<br>
 <설명> <br>
--로그인은 button 타입에 img 태그와 src 태그를 활용하여 이미지와 링크를 등록하고 이것으로 다른 계정으로 로그인하기의 화면 구현을 진행하였습니다.<br>
+-로그인은 button 타입에 img 태그와 src 태그를 활용하여 이미지와 링크를 등록하고 이것으로 다른 계정으로 로그인하기의 화면을 구현하였습니다.<br>
 * 로그인 - 화면구현 상세 코드
   https://github.com/hsy2493/HumanBox/blob/master/HumanBox/src/main/webapp/Login/Login_basic.html<br>
 
 (2) 회원가입<br>
 ![image](https://github.com/user-attachments/assets/5ee3579f-6d7d-473d-9066-a3a3b52b4180)<br>
 <설명> <br>
--회원가입은 div 태그에 class를 추가하여 style 태그로 text-align 태그 등을 활용하여 화면 구현을 진행하였으며, <br>
-각 회원방식마다 img 태그와 onclick 태그를 활용하여 링크를 등록하면서 화면 구현을 진행하였습니다. <br>
+-회원가입은 div 태그에 class를 추가하여 style 태그로 text-align 태그 등을 활용하고, <br>
+각 회원방식마다 img 태그와 onclick 태그를 활용하여, 링크를 등록하면서 화면을 구현하였습니다. <br>
 * 회원가입 - 화면구현 상세 코드
   https://github.com/hsy2493/HumanBox/blob/master/HumanBox/src/main/webapp/MambersShip/mamber_basic.html<br>
 
